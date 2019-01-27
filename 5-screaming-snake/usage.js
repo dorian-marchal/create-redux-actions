@@ -1,11 +1,17 @@
 import actions from './creation';
 
-// Creation.
-const dispatchedAction = actions.PAGE_REQUESTED('foo');
-
-switch (dispatchedAction.type) {
-  // Checking type.
-  case `${actions.PAGE_REQUESTED}`:
-    console.log(dispatchedAction);
-    break;
+function reducer(state, action) {
+  switch (action.type) {
+    // Example of type checking:
+    case `${actions.PAGE_REQUESTED}`:
+      return { ...state, requested: action.payload };
+  }
+  return state;
 }
+
+// Example of action creation:
+const action = actions.PAGE_REQUESTED('foo');
+
+const state = reducer({}, action);
+
+export { action, state };
