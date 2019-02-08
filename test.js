@@ -7,6 +7,7 @@ const methods = {
   dry: esmImport('./3-dry/usage'),
   middleground: esmImport('./4-middleground/usage'),
   'screaming-snake': esmImport('./5-screaming-snake/usage'),
+  'alternative-screaming-snake': esmImport('./6-alternative-screaming-snake/usage'),
 };
 
 _.forEach(methods, ({ action, state }, name) => {
